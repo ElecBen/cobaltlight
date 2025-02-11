@@ -1,3 +1,5 @@
+import pytest
+
 from colores import a_rgb
 
 
@@ -11,3 +13,8 @@ def test_a_rgb_de_tres_digitos():
 
 def test_a_rgb_sin_almohadilla():
     assert a_rgb("00ff00") == (0, 255, 0)
+
+
+def test_a_rgb_con_digitos_de_mas():
+    with pytest.raises(ValueError):
+        a_rgb("#ff00")
