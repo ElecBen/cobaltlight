@@ -1,0 +1,11 @@
+[project]
+name = "cobaltlight"
+version = "0.1.0"
+description = "Convierte, mezcla y compara colores hex y RGB"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+keywords = ["color", "hex", "rgb", "contraste", "wcag"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
