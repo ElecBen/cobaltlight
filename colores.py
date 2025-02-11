@@ -4,6 +4,8 @@ BLANCO = (255, 255, 255)
 
 def a_rgb(hexa):
     """Pasa un color hex de 3 o 6 digitos a una tupla (r, g, b)."""
+    if len(hexa.lstrip("#")) not in (3, 6):
+        raise ValueError("el hex debe tener 3 o 6 digitos")
     t = hexa.lstrip("#")
     if len(t) == 3:
         t = "".join(c * 2 for c in t)
