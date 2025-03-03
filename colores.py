@@ -10,3 +10,8 @@ def a_rgb(hexa):
     if len(t) == 3:
         t = "".join(c * 2 for c in t)
     return tuple(int(t[i:i + 2], 16) for i in (0, 2, 4))
+
+
+def a_hex(rgb):
+    """Pasa una tupla (r, g, b) a la forma #rrggbb."""
+    return "#" + "".join("%02x" % max(0, min(255, int(c))) for c in rgb)
