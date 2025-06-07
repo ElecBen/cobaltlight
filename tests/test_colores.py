@@ -1,6 +1,6 @@
 import pytest
 
-from colores import a_hex, a_rgb
+from colores import BLANCO, NEGRO, a_hex, a_rgb, luminancia
 
 
 def test_a_rgb_de_seis_digitos():
@@ -30,3 +30,12 @@ def test_a_hex_recorta_lo_que_se_sale():
 
 def test_hex_y_rgb_son_inversos():
     assert a_rgb(a_hex((12, 34, 56))) == (12, 34, 56)
+
+
+def test_luminancia_de_los_extremos():
+    assert luminancia(NEGRO) == 0.0
+    assert round(luminancia(BLANCO), 3) == 1.0
+
+
+def test_luminancia_de_un_gris_medio():
+    assert 0.1 < luminancia((128, 128, 128)) < 0.3
