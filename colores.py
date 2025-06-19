@@ -1,3 +1,6 @@
+"""Colores hex y RGB, con contraste segun WCAG."""
+
+
 NEGRO = (0, 0, 0)
 BLANCO = (255, 255, 255)
 
