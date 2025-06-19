@@ -1,5 +1,7 @@
 """Colores hex y RGB, con contraste segun WCAG."""
 
+__all__ = ["a_hex", "a_rgb", "luminancia"]
+
 
 NEGRO = (0, 0, 0)
 BLANCO = (255, 255, 255)
