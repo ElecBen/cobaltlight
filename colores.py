@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-__all__ = ["a_hex", "a_rgb", "luminancia"]
+__all__ = ["a_hex", "a_rgb", "contraste", "luminancia"]
 
 
 NEGRO = (0, 0, 0)
@@ -33,3 +33,9 @@ def luminancia(rgb: tuple) -> float:
                        else ((v + 0.055) / 1.055) ** 2.4)
     r, g, b = canales
     return 0.2126 * r + 0.7152 * g + 0.0722 * b
+
+
+def contraste(a, b):
+    """Razon de contraste entre dos colores, de 1.0 a 21.0."""
+    la, lb = luminancia(a), luminancia(b)
+    return (max(la, lb) + 0.05) / (min(la, lb) + 0.05)
