@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-__all__ = ["a_hex", "a_rgb", "contraste", "luminancia"]
+__all__ = ["a_hex", "a_rgb", "contraste", "luminancia", "mezcla"]
 
 
 NEGRO = (0, 0, 0)
@@ -39,3 +39,8 @@ def contraste(a, b):
     """Razon de contraste entre dos colores, de 1.0 a 21.0."""
     la, lb = luminancia(a), luminancia(b)
     return (max(la, lb) + 0.05) / (min(la, lb) + 0.05)
+
+
+def mezcla(a, b, peso=0.5):
+    """Mezcla dos colores; con peso 0.0 sale `a` y con 1.0 sale `b`."""
+    return tuple(round(x + (y - x) * peso) for x, y in zip(a, b))
