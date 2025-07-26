@@ -1,6 +1,6 @@
 import pytest
 
-from colores import BLANCO, NEGRO, a_hex, a_rgb, luminancia
+from colores import BLANCO, NEGRO, a_hex, a_rgb, contraste, luminancia
 
 
 def test_a_rgb_de_seis_digitos():
@@ -39,3 +39,15 @@ def test_luminancia_de_los_extremos():
 
 def test_luminancia_de_un_gris_medio():
     assert 0.1 < luminancia((128, 128, 128)) < 0.3
+
+
+def test_contraste_maximo():
+    assert round(contraste(NEGRO, BLANCO), 1) == 21.0
+
+
+def test_contraste_de_un_color_consigo_mismo():
+    assert round(contraste(NEGRO, NEGRO), 1) == 1.0
+
+
+def test_contraste_no_depende_del_orden():
+    assert contraste(NEGRO, BLANCO) == contraste(BLANCO, NEGRO)
