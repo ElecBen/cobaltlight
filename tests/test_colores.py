@@ -1,6 +1,6 @@
 import pytest
 
-from colores import BLANCO, NEGRO, a_hex, a_rgb, contraste, luminancia
+from colores import BLANCO, NEGRO, a_hex, a_rgb, contraste, luminancia, mezcla
 
 
 def test_a_rgb_de_seis_digitos():
@@ -51,3 +51,12 @@ def test_contraste_de_un_color_consigo_mismo():
 
 def test_contraste_no_depende_del_orden():
     assert contraste(NEGRO, BLANCO) == contraste(BLANCO, NEGRO)
+
+
+def test_mezcla_al_cincuenta_por_ciento():
+    assert mezcla(NEGRO, BLANCO) == (128, 128, 128)
+
+
+def test_mezcla_en_los_extremos():
+    assert mezcla(NEGRO, BLANCO, 0.0) == NEGRO
+    assert mezcla(NEGRO, BLANCO, 1.0) == BLANCO
