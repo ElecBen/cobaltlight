@@ -43,4 +43,6 @@ def contraste(a, b):
 
 def mezcla(a, b, peso=0.5):
     """Mezcla dos colores; con peso 0.0 sale `a` y con 1.0 sale `b`."""
+    if not 0.0 <= peso <= 1.0:
+        raise ValueError("peso debe estar entre 0.0 y 1.0")
     return tuple(round(x + (y - x) * peso) for x, y in zip(a, b))
