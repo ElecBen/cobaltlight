@@ -60,3 +60,8 @@ def test_mezcla_al_cincuenta_por_ciento():
 def test_mezcla_en_los_extremos():
     assert mezcla(NEGRO, BLANCO, 0.0) == NEGRO
     assert mezcla(NEGRO, BLANCO, 1.0) == BLANCO
+
+
+def test_mezcla_con_peso_imposible():
+    with pytest.raises(ValueError):
+        mezcla(NEGRO, BLANCO, 1.5)
