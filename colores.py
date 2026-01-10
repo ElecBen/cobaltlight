@@ -35,13 +35,14 @@ def luminancia(rgb: tuple) -> float:
     return 0.2126 * r + 0.7152 * g + 0.0722 * b
 
 
-def contraste(a, b):
+def contraste(a: tuple, b: tuple) -> float:
     """Razon de contraste entre dos colores, de 1.0 a 21.0."""
     la, lb = luminancia(a), luminancia(b)
     return (max(la, lb) + 0.05) / (min(la, lb) + 0.05)
 
 
-def mezcla(a, b, peso=0.5):
+def mezcla(a: tuple, b: tuple,
+           peso: float = 0.5) -> tuple[int, ...]:
     """Mezcla dos colores; con peso 0.0 sale `a` y con 1.0 sale `b`."""
     if not 0.0 <= peso <= 1.0:
         raise ValueError("peso debe estar entre 0.0 y 1.0")
