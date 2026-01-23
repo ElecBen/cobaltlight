@@ -28,3 +28,11 @@ docs/       notas de diseno
 | `luminancia(rgb)` | la luminancia relativa del color, de 0.0 a 1.0 |
 | `contraste(a, b)` | la razon de contraste entre dos colores, de 1.0 a 21.0 |
 | `mezcla(a, b, peso)` | la mezcla de dos colores; peso 0.0 devuelve `a` |
+
+## Medir
+
+El banco de pruebas vive en `bench/` y se lanza como modulo, siempre desde la raiz del repo:
+
+```
+python -m bench.medir
+```
