@@ -1,6 +1,6 @@
 [project]
 name = "cobaltlight"
-version = "0.2.0"
+version = "0.3.0"
 description = "Convierte, mezcla y compara colores hex y RGB"
 requires-python = ">=3.9"
 license = { text = "MIT" }
