@@ -1,5 +1,7 @@
 # cobaltlight
 
+![tests](https://github.com/ElecBen/cobaltlight/actions/workflows/tests.yml/badge.svg)
+
 Convierte, mezcla y compara colores hex y RGB.
 
 ## Uso
